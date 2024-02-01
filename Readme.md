@@ -1,9 +1,9 @@
 # @Movies Catalog
----
+
+Link: https://movies-catalog-gamma.vercel.app
 Este projeto foi criado com React 18.2.0 e node 18.
 
 ## Sobre o Projeto
----
 Este projeto consiste em um catálogo de filmes onde os usuários podem conhecer novos filmes baseados em categorias, novidades populares ou avaliação geral do público.
 
 Nesse projeto foi utilizada a [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started) como fonte de recursos.
@@ -13,7 +13,6 @@ Nesse projeto foi utilizada a [TMDB API](https://developer.themoviedb.org/refere
 ![Imagem](./public/images/misc/sample.png)
 
 ## Tecnologias utilizadas
----
 - Typescript
 - React
 - Axios
@@ -23,7 +22,6 @@ Nesse projeto foi utilizada a [TMDB API](https://developer.themoviedb.org/refere
 - React Bootstrap
 
 ## Autor
----
 Lucas Campos
 
 Linkedin: https://www.linkedin.com/in/lucascamposdev/
