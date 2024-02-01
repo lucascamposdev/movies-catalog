@@ -28,7 +28,7 @@ const ByGenre = () => {
         <BannerSlider endpoint={endpoints.popular_by_genre + genreId + '&page=2'}/>
         <Carousel title={`People's Favorite ${foundGenre?.name}`} endpoint={endpoints.best_by_genre + genre} type="list"/>
         <Carousel title={`Trending Now`} endpoint={endpoints.popular_by_genre + genreId } type="list"/>
-        <Carousel title={`${foundGenre?.name} Movies`} endpoint={endpoints.best_by_genre + genre + '&page=2'} type="list"/>
+        <Carousel title={`${foundGenre?.name}`} endpoint={endpoints.best_by_genre + genre + '&page=2'} type="list"/>
         <Carousel title={`Newest ${foundGenre?.name}`} endpoint={endpoints.newest_by_genre + genreId } type="list"/>
         <Carousel title={`You Also May Like`} endpoint={endpoints.best_by_genre + genre + '&page=3'} type="list"/>
     </main>

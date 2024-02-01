@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    if (scrollPosition > 75) {
+    if (scrollPosition > 25) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
