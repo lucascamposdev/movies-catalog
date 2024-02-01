@@ -59,6 +59,16 @@ export const Slider = styled(Swiper)`
         font-weight: bolder;
     }
 
+    @media(max-width: 750px){
+        &:hover .swiper-button-prev{
+            display: none;
+        }
+
+        &:hover .swiper-button-next{
+            display: none;
+        }
+    }
+
 `
 
 export const Slide = styled(SwiperSlide)`

@@ -9,6 +9,7 @@ export const TopMovieCard = styled.div`
 
     & img:nth-child(2){
         transform: translateX(-40px);
+        width: 133px;
     }
 
 `
