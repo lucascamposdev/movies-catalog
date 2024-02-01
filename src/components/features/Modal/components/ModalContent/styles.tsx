@@ -108,7 +108,7 @@ export const Wrapper = styled.div`
 `
 export const Overview = styled.p`
     max-height: 150px;
-    overflow-y: scroll;
+    overflow: auto;
 
     @media(max-width: 750px){
         height: 100px;
