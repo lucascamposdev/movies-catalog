@@ -1,10 +1,6 @@
 import * as S from './styles'
 
-type Props = {
-
-}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <S.Footer>
         <hr></hr>
