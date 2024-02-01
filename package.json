@@ -1,5 +1,6 @@
 {
   "name": "movie-catalog",
+  "homepage": "https://movies-catalog-gamma.vercel.app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
