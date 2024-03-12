@@ -35,7 +35,7 @@ const SearchBar = () => {
   return (
     <Form onSubmit={(e) => e.preventDefault()}>
       <Icon onClick={handleToggleSearch} />
-        <SearchInput    
+        <SearchInput
           isOpen={isOpen}
           type='text'
           placeholder='Search Movies...'
