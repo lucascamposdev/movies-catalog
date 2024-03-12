@@ -10,11 +10,9 @@ import { useContext } from "react"
 // Components
 import FoundMovie from "./components/FoundMovie"
 import InfiniteScroll from "react-infinite-scroll-component"
-import { Modal } from '@components/index'
 
 // Context
 import { searchContext } from '@context/searchContext'
-import { modalContext } from '@context/modalContext'
 
 import { useEffect } from 'react'
 
@@ -26,7 +24,6 @@ const Search = () => {
   const query = searchParams.get('q');
 
   const { setQuery, pageNum, setPageNum } = useContext(searchContext)
-  const { isOpen } = useContext(modalContext)
 
   // when leave page, reset searchbar
   useEffect(() => {
@@ -43,9 +40,6 @@ const Search = () => {
 
   return (
     <S.PageContainer>
-
-      {isOpen && <Modal />}
-
       <S.ResultsFor>
         <h3><em>/</em>Results for "{query}"</h3>
       </S.ResultsFor>

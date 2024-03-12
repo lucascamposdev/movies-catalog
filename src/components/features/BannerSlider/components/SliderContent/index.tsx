@@ -10,8 +10,7 @@ import imagePath from '@utils/imagePath'
 
 // Types
 import { Movie } from 'types/types'
-import { useContext } from 'react';
-import { modalContext } from '@context/modalContext';
+import { useModal } from '@context/modalContext';
 
 type Props = {
     item: Movie
@@ -19,7 +18,7 @@ type Props = {
 
 const SliderContent = ({ item }: Props) => {
 
-    const { handleSelection } = useContext(modalContext)
+    const { handleSelection } = useModal();
 
   return (
     <S.Content>

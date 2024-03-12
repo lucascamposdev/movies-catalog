@@ -17,7 +17,8 @@ const LoadingPoster = ({ path }: Props) => {
         <Image
         src={path}
         onLoad={handleImageLoad}
-        isLoading={loading} />
+        isLoading={loading} 
+        alt="Movie Poster"/>
     )
 }
 

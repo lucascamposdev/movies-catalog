@@ -1,0 +1,14 @@
+.swiper-button-prev,
+.swiper-button-next{
+    color: white;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.swiper-pagination-bullet{
+    background: grey;
+}

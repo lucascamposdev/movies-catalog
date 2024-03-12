@@ -8,15 +8,15 @@ import {BrowserRouter, Routes, Route,  } from 'react-router-dom';
 // Pages
 import Home from '@pages/Home';
 import Search from '@pages/Search';
+import ByGenre from "@pages/ByGenre";
 
 // Context
 import ModalProvider from "@context/modalContext";
 import SearchProvider from "@context/searchContext";
+import CategoriesProvider from "@context/categoriesContext";
 
 // Components
 import { Footer, Navbar } from '@components/index';
-import ByGenre from "@pages/ByGenre";
-import CategoriesProvider from "@context/categoriesContext";
 
 function App() {
 

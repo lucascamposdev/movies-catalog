@@ -5,7 +5,7 @@ interface Props {
     isOpen: boolean;
 }
 
-export const SearchForm = styled.form`
+export const Form = styled.form`
     display: flex;
     gap: 1rem;
     margin-left: auto;
@@ -42,7 +42,7 @@ export const SearchInput = styled.input<Props>`
   }
 `
 
-export const SearchIcon = styled(IoSearch)`
+export const Icon = styled(IoSearch)`
     font-size: 2rem;
     cursor: pointer;
 

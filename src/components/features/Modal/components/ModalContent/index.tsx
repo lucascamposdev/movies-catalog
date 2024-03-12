@@ -1,23 +1,22 @@
 // Styles
-import { modalContext } from '@context/modalContext';
+import { useModal } from '@context/modalContext';
 import * as S from './styles'
 
 // Components
 import { MovieInfo, LoadingImage, Loader } from '@components/index'
 
 // Hooks
-import useModal from '@hooks/useModal';
+import useRequestMovie from '@hooks/useRequestMovie';
 
 // Utils
 import imagePath from '@utils/imagePath'
-import { useContext } from 'react';
 import { formatGenres } from '@utils/format';
 
 
 const ModalContent = () => {
 
-    const { movieId, closeModal } = useContext(modalContext)
-    const { data, loading } = useModal({ movieId });
+    const { movieId, closeModal } = useModal();
+    const { data, loading } = useRequestMovie({ movieId });
 
     const handleClick = () => {
         console.log('cliquei')
@@ -50,10 +49,11 @@ const ModalContent = () => {
                         </S.Details>
                     </S.Wrapper>
                 </S.Content>
-                :
+                : loading ?
                 <S.LoadScreen>
                     <Loader/>
                 </S.LoadScreen>
+                : ''
             }
         </>
     )

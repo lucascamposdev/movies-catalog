@@ -1,38 +1,23 @@
-// React
-import { useContext, useEffect } from 'react'
-
-// Styles
-import * as S from './styles'
-
-// Context
-import { modalContext } from '@context/modalContext'
-
 // Components
 import ModalContent from './components/ModalContent'
+import { Modal as MUIModal, Fade } from '@mui/material';
 
-const Modal = () => {
+interface MUIModalProps {
+  open: boolean;
+  handleClose: () => void;
+}
 
-  const { closeModal } = useContext(modalContext)
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (target.id == 'outside') {
-        closeModal();
-      }
-    };
-
-    document.body.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.body.removeEventListener('click', handleClickOutside);
-    };
-  }, [closeModal]);
+const Modal = ({ open, handleClose}: MUIModalProps) => {
 
   return (
-    <S.Container id="outside" >
+  <MUIModal
+      open={open}
+      onClose={handleClose}
+      closeAfterTransition
+      sx={{ display: 'grid', placeContent: 'center'}}
+    >
       <ModalContent/>
-    </S.Container>
+    </MUIModal>
   )
 }
 

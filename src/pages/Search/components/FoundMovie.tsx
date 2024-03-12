@@ -8,8 +8,7 @@ import { Movie } from 'types/types'
 import imagePath from '@utils/imagePath'
 
 // Context
-import { useContext } from 'react'
-import { modalContext } from '@context/modalContext'
+import { useModal } from '@context/modalContext';
 
 // Components
 import { LoadingPoster } from '@components/index'
@@ -20,7 +19,7 @@ type Props = {
 
 const FoundMovie = ({ item }: Props) => {
 
-  const { handleSelection } = useContext(modalContext)
+  const { handleSelection } = useModal();
 
   const handleClick = ():void => {
     handleSelection(item)

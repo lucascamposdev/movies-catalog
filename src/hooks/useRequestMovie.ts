@@ -4,18 +4,21 @@ import { useEffect, useState } from "react";
 // Types
 import { Movie } from "types/types";
 
+// Service
 import { getMovieById } from "@services/movies.service";
 
 interface Props {
-    movieId: number
+    movieId: number | null
 }
 
-const useModal = ({ movieId }: Props) => {
+const useRequestMovie = ({ movieId }: Props) => {
 
     const [data, setData] = useState<Movie>()
-    const [loading, setLoading] = useState<boolean>(true)
+    const [loading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
+        if(!movieId) return
+
         const controller = new AbortController();
         const { signal } = controller
 
@@ -40,4 +43,4 @@ const useModal = ({ movieId }: Props) => {
     return { data, loading }
 }
 
-export default useModal;
+export default useRequestMovie;

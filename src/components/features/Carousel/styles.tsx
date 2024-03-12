@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/navigation';
 
 
-export const Container = styled.main`
+export const Container = styled.div`
     padding-bottom: 2rem;
 
 `
 
-export const Title = styled.h1`
+export const Title = styled.p`
     font-family: var(--main-font);
     font-size: 1.2rem;
     margin: 1rem;

@@ -1,6 +1,9 @@
 // Styles
 import * as S from './styles'
 
+// Components
+import { LoadingPoster } from "@components/index"
+
 // Types
 import { Movie } from "types/types"
 
@@ -11,8 +14,7 @@ import { useContext } from "react"
 import imagePath from "@utils/imagePath"
 
 // Context
-import { modalContext } from "@context/modalContext"
-import { LoadingPoster } from "@components/index"
+import { useModal } from "@context/modalContext"
 
 type Props = {
     item: Movie;
@@ -21,7 +23,8 @@ type Props = {
 
 const TopMovieCard = ({ item, position }: Props) => {
 
-    const { handleSelection } = useContext(modalContext)
+    const { handleSelection } = useModal();
+    
   return (
     <S.TopMovieCard onClick={() => handleSelection(item)}>
         <S.Number src={`/images/numbers/${position}.svg`}/>

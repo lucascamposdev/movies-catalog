@@ -30,7 +30,9 @@ const LoadingImage = ({ path }: Props) => {
         src={path}
         onLoad={handleImageLoad}
         onError={handleImageError}
-        isImageLoaded={!loading && !error} />
+        isImageLoaded={!loading && !error} 
+        alt="Movie Poster"
+        />
     </>
   )
 }

@@ -4,7 +4,7 @@ enum ScreenSize{
     xl = 1610
 }
 
-export const PageContainer = styled.main`
+export const PageContainer = styled.section`
     padding-top: 4.5rem;
     padding-inline: 2rem;
     height: auto;

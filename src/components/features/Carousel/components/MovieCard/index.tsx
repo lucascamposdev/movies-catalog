@@ -1,25 +1,24 @@
 // Types
 import { Movie } from "types/types"
 
+// Components
+import { LoadingPoster } from "@components/index"
+
 // Styles
 import * as S from './styles'
 
 // Utils
 import imagePath from "@utils/imagePath"
 
-// React
-import { useContext } from "react"
-
 // Context
-import { modalContext } from "@context/modalContext"
-import { LoadingPoster } from "@components/index"
+import { useModal } from "@context/modalContext"
 
 type Props = {
     item: Movie;
 }
 
 const MovieCard = ({ item }: Props) => {
-  const { handleSelection } = useContext(modalContext)
+  const { handleSelection } = useModal();
   
   return (
     <S.MovieCard onClick={() => handleSelection(item)}>

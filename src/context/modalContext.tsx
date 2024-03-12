@@ -1,32 +1,41 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useState, useContext } from "react";
 import { Movie } from "types/types";
+import { Modal } from "@components/index";
 
 // O que meu contexto oferece
-export interface ContextInterface {
+interface ModalContextProps  {
     isOpen: boolean;
-    movieId: number;
+    movieId: number | null;
     handleSelection: (movie: Movie) => void;
     closeModal: () => void;
 }
 
 // Valor inicial do contexto
-const defaultContext = {
-    movieId: 0,
-    isOpen: false,
-    handleSelection: (_movie: Movie): void => {}, 
-    closeModal: (): void => {}, 
-} as ContextInterface
+// const defaultContext = {
+//     movieId: 0,
+//     isOpen: false,
+//     handleSelection: (_movie: Movie): void => {}, 
+//     closeModal: (): void => {}, 
+// } as ModalContextProps 
 
 // cria o contexto
-export const modalContext = createContext(defaultContext)
+export const ModalContext = createContext<ModalContextProps  | undefined>(undefined);
 
-type ProviderProps = {
+export const useModal = (): ModalContextProps => {
+    const context = useContext(ModalContext);
+    if (!context) {
+      throw new Error('useModal must be used within a ModalProvider');
+    }
+    return context;
+  };
+
+interface  ModalProviderProps {
     children: ReactNode
 }
 
-export default function modalProvider ({ children }: ProviderProps){
+export default function ModalProvider ({ children }: ModalProviderProps){
 
-    const [ movieId, setMovieId ] = useState<number>(0)  // MUDAR DEPOIS \/
+    const [ movieId, setMovieId ] = useState<number | null>(null)  // MUDAR DEPOIS \/
     const [ isOpen, setIsOpen ] = useState<boolean>(false)
 
     const handleSelection = (movie: Movie): void => {
@@ -39,7 +48,7 @@ export default function modalProvider ({ children }: ProviderProps){
     }
 
     return (
-        <modalContext.Provider 
+        <ModalContext.Provider 
         value={{ 
             isOpen, 
             movieId, 
@@ -47,7 +56,8 @@ export default function modalProvider ({ children }: ProviderProps){
             closeModal, 
             }}>
           {children}
-        </modalContext.Provider>
+          <Modal handleClose={closeModal} open={isOpen}/>
+        </ModalContext.Provider>
       );
 }
 

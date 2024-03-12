@@ -64,8 +64,7 @@ export const ImageContainer = styled.div`
     bottom: 0;
     width: 100%;
     height: 120%;
-    background: linear-gradient(to bottom, transparent, var(--third-color) 95%);
-    /* background: red; */
+    background: linear-gradient(to bottom, transparent, var(--third-color) 100%);
     z-index: 1;
     }
 `
@@ -109,6 +108,7 @@ export const Wrapper = styled.div`
 export const Overview = styled.p`
     max-height: 150px;
     overflow: auto;
+    color:white;
 
     @media(max-width: 750px){
         height: 100px;
