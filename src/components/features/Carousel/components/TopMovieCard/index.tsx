@@ -7,9 +7,6 @@ import { LoadingPoster } from "@components/index"
 // Types
 import { Movie } from "types/types"
 
-// React
-import { useContext } from "react"
-
 // Utils
 import imagePath from "@utils/imagePath"
 

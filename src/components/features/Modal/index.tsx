@@ -1,6 +1,6 @@
 // Components
 import ModalContent from './components/ModalContent'
-import { Modal as MUIModal, Fade } from '@mui/material';
+import { Modal as MUIModal } from '@mui/material';
 
 interface MUIModalProps {
   open: boolean;
