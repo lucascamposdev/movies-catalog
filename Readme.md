@@ -1,6 +1,6 @@
 # @Movies Catalog
 
-https://movies-catalog-gamma.vercel.app
+https://movies-catalog-sage.vercel.app
 
 Este projeto foi criado com React 18.2.0 e node 18.
 
